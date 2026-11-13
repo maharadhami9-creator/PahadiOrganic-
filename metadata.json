@@ -1,0 +1,6 @@
+{
+  "name": "Pahad Organic",
+  "description": "Authentic Himalayan organic farm-to-table marketplace powered by Firebase Authentication and Cloud Firestore.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

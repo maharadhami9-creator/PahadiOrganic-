@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">Pahad Organic</string>
+
+    <!-- Auth Screen -->
+    <string name="brand_badge">PAHAD ORGANIC • HIMALAYAS</string>
+    <string name="auth_headline">Pure Harvests from the High Himalayas</string>
+    <string name="auth_subtitle">Direct from mountain family farms to your kitchen, synced securely in real time with Cloud Firestore.</string>
+    <string name="auth_feature_origin_title">Single-Origin Mountain Crops</string>
+    <string name="auth_feature_origin_desc">Ethically sourced wild honey, red rice, bilona ghee &amp; alpine herbs.</string>
+    <string name="auth_feature_sync_title">Cloud-Synced Basket &amp; Orders</string>
+    <string name="auth_feature_sync_desc">Your pantry preferences, saved harvests, and orders stay backed up.</string>
+    <string name="auth_google_button">Sign in with Google</string>
+    <string name="auth_signing_in">Signing in…</string>
+    <string name="auth_firebase_footer">Authenticated with Firebase &amp; Google Sign-In. Email/Password and Phone providers can be enabled in Firebase Console.</string>
+
+    <!-- Navigation -->
+    <string name="nav_harvests">Harvests</string>
+    <string name="nav_basket">Basket</string>
+    <string name="nav_pantry">Pantry</string>
+
+    <!-- Harvests Screen -->
+    <string name="greeting_namaste">Namaste, %1$s</string>
+    <string name="harvests_subheading">Fresh high-altitude organic harvests</string>
+    <string name="search_harvests_hint">Search honey, red rice, Kumaon…</string>
+    <string name="banner_season_tag">AUTUMN HARVEST</string>
+    <string name="banner_harvest_title">Mountain-Grown Purity</string>
+    <string name="banner_harvest_desc">Zero pesticides • Cold-pressed &amp; stone-milled</string>
+    <string name="badge_bestseller">Popular</string>
+    <string name="price_label">Price</string>
+    <string name="add_to_basket">Add to Basket</string>
+    <string name="in_basket_count">In Basket (%1$d)</string>
+    <string name="empty_search_title">No harvests matched</string>
+    <string name="empty_search_desc">Try clearing the filter or searching another Himalayan region.</string>
+
+    <!-- Basket & Orders -->
+    <string name="basket_orders_title">Basket &amp; Orders</string>
+    <string name="tab_basket_count">Basket (%1$d)</string>
+    <string name="tab_orders_count">Orders (%1$d)</string>
+    <string name="delivery_details_title">Mountain Dispatch Details</string>
+    <string name="delivery_address_label">Delivery Address</string>
+    <string name="delivery_address_hint">House/Street, Town, District, PIN</string>
+    <string name="order_total_label">Total Payable</string>
+    <string name="place_organic_order">Place Organic Order</string>
+    <string name="empty_basket_title">Your basket is empty</string>
+    <string name="empty_basket_desc">Explore raw forest honey, heirloom grains, and alpine herbal infusions.</string>
+    <string name="empty_orders_title">No orders placed yet</string>
+    <string name="empty_orders_desc">Your placed Himalayan harvest orders will appear here with live status.</string>
+    <string name="browse_harvests">Browse Harvests</string>
+    <string name="cancel_order">Cancel</string>
+
+    <!-- Pantry Profile -->
+    <string name="google_auth_verified">Google Sign-In Verified</string>
+    <string name="stat_orders">Orders Placed</string>
+    <string name="stat_saved_harvests">Saved Harvests</string>
+    <string name="pantry_preferences_title">Pantry &amp; Delivery Preferences</string>
+    <string name="label_display_name">Full Name</string>
+    <string name="label_saved_address">Default Delivery Address</string>
+    <string name="label_preferred_region">Preferred Harvest Region</string>
+    <string name="save_profile_cta">Save Preferences</string>
+    <string name="saved_harvests_title">Saved Organic Harvests</string>
+    <string name="sign_out_cta">Sign Out</string>
+
+    <!-- Content Descriptions -->
+    <string name="cd_hero_banner">Himalayan organic terraced farm and harvest basket</string>
+    <string name="cd_clear_search">Clear search</string>
+    <string name="cd_toggle_favorite">Toggle favorite harvest</string>
+    <string name="cd_decrease_quantity">Decrease quantity</string>
+    <string name="cd_increase_quantity">Increase quantity</string>
+    <string name="cd_remove_item">Remove item from basket</string>
+</resources>

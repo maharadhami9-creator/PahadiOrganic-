@@ -1,0 +1,186 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Authenticated Pahad Organic shopper profile and Himalayan delivery preferences",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Firebase Auth UID of the user"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Shopper full name"
+        },
+        "email": {
+          "type": "string",
+          "description": "Shopper email address"
+        },
+        "deliveryAddress": {
+          "type": "string",
+          "description": "Saved organic delivery address"
+        },
+        "preferredRegion": {
+          "type": "string",
+          "description": "Preferred Himalayan harvest region (e.g., Kumaon, Garhwal, Kinnaur)"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when profile was created (FieldValue.serverTimestamp())"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when profile was updated (FieldValue.serverTimestamp())"
+        }
+      },
+      "required": ["userId", "displayName", "createdAt", "updatedAt"]
+    },
+    "CartItem": {
+      "title": "CartItem",
+      "description": "An organic harvest item added to the user's cloud-synced basket",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Owner UID"
+        },
+        "productId": {
+          "type": "string",
+          "description": "Catalog identifier for the organic product"
+        },
+        "productName": {
+          "type": "string",
+          "description": "Display name of the organic harvest item"
+        },
+        "category": {
+          "type": "string",
+          "description": "Product category"
+        },
+        "unitLabel": {
+          "type": "string",
+          "description": "Pack weight or volume label"
+        },
+        "unitPrice": {
+          "type": "number",
+          "description": "Unit price in INR"
+        },
+        "quantity": {
+          "type": "integer",
+          "description": "Number of units in basket"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when added (FieldValue.serverTimestamp())"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when updated (FieldValue.serverTimestamp())"
+        }
+      },
+      "required": ["userId", "productId", "productName", "category", "unitLabel", "unitPrice", "quantity", "createdAt", "updatedAt"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "A placed Himalayan organic harvest order",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Owner UID"
+        },
+        "orderNumber": {
+          "type": "string",
+          "description": "Human-readable Pahad Organic order reference"
+        },
+        "itemSummary": {
+          "type": "string",
+          "description": "Summary of ordered harvests and quantities"
+        },
+        "itemCount": {
+          "type": "integer",
+          "description": "Total item count"
+        },
+        "totalAmount": {
+          "type": "number",
+          "description": "Total order amount in INR"
+        },
+        "deliveryAddress": {
+          "type": "string",
+          "description": "Delivery destination address"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["placed", "packed", "shipped", "delivered", "cancelled"],
+          "description": "Lifecycle status of the order"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when order was placed (FieldValue.serverTimestamp())"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when order was last updated (FieldValue.serverTimestamp())"
+        }
+      },
+      "required": ["userId", "orderNumber", "itemSummary", "itemCount", "totalAmount", "deliveryAddress", "status", "createdAt", "updatedAt"]
+    },
+    "FavoriteProduct": {
+      "title": "FavoriteProduct",
+      "description": "An organic harvest bookmarked by the shopper",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Owner UID"
+        },
+        "productId": {
+          "type": "string",
+          "description": "Catalog identifier for the favorited harvest"
+        },
+        "productName": {
+          "type": "string",
+          "description": "Product name"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when favorited (FieldValue.serverTimestamp())"
+        }
+      },
+      "required": ["userId", "productId", "productName", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": {
+        "$ref": "#/entities/UserProfile"
+      },
+      "description": "Authenticated shopper profile and delivery preferences"
+    },
+    "/users/{userId}/cartItems/{cartItemId}": {
+      "schema": {
+        "$ref": "#/entities/CartItem"
+      },
+      "description": "Real-time cloud-synced organic harvest basket items"
+    },
+    "/users/{userId}/orders/{orderId}": {
+      "schema": {
+        "$ref": "#/entities/Order"
+      },
+      "description": "Shopper organic harvest order history"
+    },
+    "/users/{userId}/favorites/{productId}": {
+      "schema": {
+        "$ref": "#/entities/FavoriteProduct"
+      },
+      "description": "Shopper saved organic harvest bookmarks"
+    }
+  }
+}
